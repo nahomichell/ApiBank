@@ -26,7 +26,7 @@ namespace ApiBank.Models
             {
                 if (Balance < amount)
                 {
-                    throw new InvalidOperationException("Fondos Insuficientes");
+                    throw new InvalidOperationException("Fondos insuficientes");
                 }
                 Balance -= amount;
                 AddTransaction("Retiro", amount);
