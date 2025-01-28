@@ -19,17 +19,17 @@ namespace ApiBank.Models
             public void Deposit(decimal amount)
             {
                 Balance += amount;
-                AddTransaction("Deposit", amount);
+                AddTransaction("Deposito", amount);
             }
 
             public void Withdraw(decimal amount)
             {
                 if (Balance < amount)
                 {
-                    throw new InvalidOperationException("Insufficient funds");
+                    throw new InvalidOperationException("Fondos Insuficientes");
                 }
                 Balance -= amount;
-                AddTransaction("Withdrawal", amount);
+                AddTransaction("Retiro", amount);
             }
 
             private void AddTransaction(string type, decimal amount)
